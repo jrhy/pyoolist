@@ -35,7 +35,7 @@ print "list -> map() -> [(key,val)] -> tomap():"
 test("m.map(lambda key, val: (key, val)).tomap()", m)
 print ""
 
-print "An flist should transform its mappable items to fmaps:"
+print "An flist should transform map entries to fmaps:"
 l = flist([
       {'id':1, 'op':'registration'},
       {'id':2, 'op':'transfer'}])
