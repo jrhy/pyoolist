@@ -28,18 +28,18 @@ Chain more stuff:
 See [flisttest.py](flisttest.py) for more examples.
 
 ```
-l = [1, 2]
+l = flist([1, 2])
 l.filter(lambda x: x % 2 == 0).size()      == 1
 l.map(lambda x: x + 2)                     == [3, 4]
 
-l = [[1, 2], [3, 4]]
+l = flist([[1, 2], [3, 4]])
 l.flatten()                                == [1, 2, 3, 4]
 
 flist([1,2]).flatmap(lambda x: [x, x])          == [1, 1, 2, 2]
 flist([1,2]).reduce(lambda a, b: a + b, 0)      == 3
 flist(['a','b']).reduce(lambda a, b: a + b, '') == ab
 
-m = {'k2': 'v2', 'k1': 'v1'}
+m = fmap({'k2': 'v2', 'k1': 'v1'})
 sorted(m.keys())                           == ['k1', 'k2']
 sorted(m.values())                         == ['v1', 'v2']
 sorted(m.items())                          == [('k1', 'v1'), ('k2', 'v2')]
@@ -49,7 +49,7 @@ list -> map() -> [(key,val)] -> tomap():
 m.map(lambda key, val: (key, val)).tomap() == {'k2': 'v2', 'k1': 'v1'}
 
 An flist should transform map entries to fmaps:
-l = [{'id': 1, 'op': 'registration'}, {'id': 2, 'op': 'transfer'}]
+l = flist([{'id': 1, 'op': 'registration'}, {'id': 2, 'op': 'transfer'}])
 type(l[0])                                 == <class 'flist.fmap'>
 l.map(lambda e: sorted(e.map(lambda key, val: '%s=%s'%(key,val))))
  == [['id=1', 'op=registration'], ['id=2', 'op=transfer']]
