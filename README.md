@@ -25,5 +25,5 @@ Chain more stuff:
   .size())                       == 3
 ```
 
-See (../blob/master/flisttest.py) for more examples.
+See [flisttest.py](flisttest.py) for more examples.
 
