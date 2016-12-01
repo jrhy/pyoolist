@@ -16,3 +16,14 @@ We can filter it:
 l.filter(lambda x: x % 3 == 0)   == [3, 6, 9]
 ```
 
+Add more stuff:
+
+```python
+(l
+  .filter(lambda x: x % 3 == 0)  #  [3,   6,   9]
+  .map(lambda x: x + 200)        #  [203, 206, 209]
+  .size())                       == 3
+```
+
+See flisttest.py for more examples.
+
