@@ -1,3 +1,5 @@
+import json
+
 from flist import flist, fmap
 
 def test(expr, expected):
@@ -5,7 +7,7 @@ def test(expr, expected):
     if not actual == expected:
         print expr
         raise ValueError("test failed; actual:%s, expected:%s" % (actual, expected))
-    print "%s == %s" % (expr, expected)
+    print "%s == %s" % (expr, json.dumps(expected))
 
 l = flist([1,2])
 print "l = flist(%s)" % l
@@ -40,7 +42,7 @@ l = flist([
       {'id':1, 'op':'registration'},
       {'id':2, 'op':'transfer'}])
 print "l = flist(%s)" % l
-test("type(l[0])                                ", fmap)
+test("str(type(l[0]))                           ", "<class 'flist.fmap'>")
 test("l.map(lambda e: sorted(e.map(lambda key, val: '%s=%s'%(key,val))))\n",
         [['id=1','op=registration'],['id=2','op=transfer']])
 print ""
