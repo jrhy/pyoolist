@@ -48,7 +48,7 @@ sorted(m.map(lambda key, val: key + val))  == ['k1v1', 'k2v2']
 list -> map() -> [(key,val)] -> tomap():
 m.map(lambda key, val: (key, val)).tomap() == {'k2': 'v2', 'k1': 'v1'}
 
-An flist should transform its mappable items to fmaps:
+An flist should transform map entries to fmaps:
 l = [{'id': 1, 'op': 'registration'}, {'id': 2, 'op': 'transfer'}]
 type(l[0])                                 == <class 'flist.fmap'>
 l.map(lambda e: sorted(e.map(lambda key, val: '%s=%s'%(key,val))))
