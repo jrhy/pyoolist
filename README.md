@@ -16,7 +16,7 @@ We can filter it:
 l.filter(lambda x: x % 3 == 0)   == [3, 6, 9]
 ```
 
-Add more stuff:
+Chain more stuff:
 
 ```python
 (l
@@ -25,5 +25,5 @@ Add more stuff:
   .size())                       == 3
 ```
 
-See flisttest.py for more examples.
+See (flisttest.py) for more examples.
 
